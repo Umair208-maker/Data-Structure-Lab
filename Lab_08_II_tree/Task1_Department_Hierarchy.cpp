@@ -10,13 +10,13 @@ public:
 
     Node(string memberName) {
         name = memberName;
-        left = nullptr;
-        right = nullptr;
+        left = NULL;
+        right = NULL;
     }
 };
 
 void displayHierarchy(Node* root) {
-    if (root == nullptr) return;
+    if (root == NULL) return;
 
     cout << "Member: " << root->name << endl;
     cout << "  Left child: "

@@ -12,17 +12,17 @@ public:
     Node(int value) {
         token = value;
         height = 1;
-        left = nullptr;
-        right = nullptr;
+        left = NULL;
+        right = NULL;
     }
 };
 
 int getHeight(Node* node) {
-    return (node == nullptr) ? 0 : node->height;
+    return (node == NULL) ? 0 : node->height;
 }
 
 int getBalanceFactor(Node* node) {
-    return (node == nullptr) ? 0
+    return (node == NULL) ? 0
         : getHeight(node->left) - getHeight(node->right);
 }
 
@@ -57,7 +57,7 @@ Node* leftRotate(Node* x) {
 
 Node* insert(Node* node, int value) {
     // 1. Insert using normal BST rules.
-    if (node == nullptr)
+    if (node == NULL)
         return new Node(value);
 
     if (value < node->token)
@@ -97,14 +97,14 @@ Node* insert(Node* node, int value) {
 }
 
 void inOrder(Node* root) {
-    if (root == nullptr) return;
+    if (root == NULL) return;
     inOrder(root->left);
     cout << root->token << " ";
     inOrder(root->right);
 }
 
 void displayTree(Node* root, string indent = "", bool isLeft = true) {
-    if (root == nullptr) return;
+    if (root == NULL) return;
 
     cout << indent;
     cout << (isLeft ? "|-- " : "\\-- ");
@@ -118,11 +118,13 @@ void displayTree(Node* root, string indent = "", bool isLeft = true) {
 }
 
 int main() {
-    Node* root = nullptr;
+    Node* root = NULL;
     int tokens[] = {15, 25, 35, 45, 55, 65, 75};
 
-    for (int token : tokens)
-        root = insert(root, token);
+    for (int i = 0; i < 7; i++)
+{
+    root = insert(root, tokens[i]);
+}
 
     cout << "HOSPITAL APPOINTMENT AVL TREE" << endl;
     cout << "Inserted tokens: 15 25 35 45 55 65 75" << endl;

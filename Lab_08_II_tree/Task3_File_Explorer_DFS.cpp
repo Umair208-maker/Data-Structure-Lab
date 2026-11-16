@@ -10,27 +10,27 @@ public:
 
     Node(string name) {
         folder = name;
-        left = nullptr;
-        right = nullptr;
+        left = NULL;
+        right = NULL;
     }
 };
 
 void inOrder(Node* root) {
-    if (root == nullptr) return;
+    if (root == NULL) return;
     inOrder(root->left);
     cout << root->folder << " ";
     inOrder(root->right);
 }
 
 void preOrder(Node* root) {
-    if (root == nullptr) return;
+    if (root == NULL) return;
     cout << root->folder << " ";
     preOrder(root->left);
     preOrder(root->right);
 }
 
 void postOrder(Node* root) {
-    if (root == nullptr) return;
+    if (root == NULL) return;
     postOrder(root->left);
     postOrder(root->right);
     cout << root->folder << " ";

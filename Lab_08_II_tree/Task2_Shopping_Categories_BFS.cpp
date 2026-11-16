@@ -11,13 +11,13 @@ public:
 
     Node(string value) {
         category = value;
-        left = nullptr;
-        right = nullptr;
+        left = NULL;
+        right = NULL;
     }
 };
 
 void breadthFirstTraversal(Node* root) {
-    if (root == nullptr) return;
+    if (root == NULL) return;
 
     queue<Node*> q;
     q.push(root);
@@ -29,9 +29,9 @@ void breadthFirstTraversal(Node* root) {
 
         cout << current->category << " ";
 
-        if (current->left != nullptr)
+        if (current->left != NULL)
             q.push(current->left);
-        if (current->right != nullptr)
+        if (current->right != NULL)
             q.push(current->right);
     }
     cout << endl;
